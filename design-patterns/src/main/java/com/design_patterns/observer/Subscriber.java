@@ -12,8 +12,10 @@ public class Subscriber implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-	System.out.println(
-		subscriberName + ": new episode available from " + ((Podcast) o).getPodcastName() + ": " + arg);
+	if (o instanceof Podcast) {
+	    System.out.println(
+		    subscriberName + ": new episode available from " + ((Podcast) o).getPodcastName() + ": " + arg);
+	}
     }
 
     public void subscribe(Observable o) {
