@@ -14,7 +14,8 @@ public class SpringbeansApplication implements CommandLineRunner {
 
     @Override
     public void run(String... arg0) throws Exception {
-	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+		SpringbeansApplication.class);
 	Bushel bushel = context.getBean(Bushel.class);
 	Apple apple = bushel.getApple();
 	System.out.println(apple.getType());
